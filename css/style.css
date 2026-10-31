@@ -667,6 +667,15 @@ ul{ list-style:none; margin:0; padding:0; }
   font-size:0.82rem;
   line-height:1.65;
 }
+.anime-gif{
+  display:block;
+  width:104px;
+  height:58px;
+  margin-top:12px;
+  border:1px solid var(--border);
+  border-radius:4px;
+  object-fit:cover;
+}
 .spotify-widget{
   display:flex;
   align-items:center;
@@ -776,6 +785,10 @@ ul{ list-style:none; margin:0; padding:0; }
 .beyond-icon--clover svg{
   animation:clover-float 3.2s ease-in-out infinite;
 }
+.beyond-icon--music svg{
+  transform-origin:50% 50%;
+  animation:music-bob 2.8s ease-in-out infinite;
+}
 .beyond-card:hover .beyond-icon{
   color:var(--accent);
   transform:translate(2px, -2px);
@@ -794,10 +807,15 @@ ul{ list-style:none; margin:0; padding:0; }
   0%, 100%{ transform:translateY(0) rotate(-5deg); }
   50%{ transform:translateY(-4px) rotate(5deg); }
 }
+@keyframes music-bob{
+  0%, 100%{ transform:translateY(0) rotate(0); }
+  50%{ transform:translateY(-2px) rotate(7deg); }
+}
 @media (prefers-reduced-motion: reduce){
   .beyond-icon--globe svg,
   .beyond-icon--controller svg,
-  .beyond-icon--clover svg{
+  .beyond-icon--clover svg,
+  .beyond-icon--music svg{
     animation:none;
   }
 }
